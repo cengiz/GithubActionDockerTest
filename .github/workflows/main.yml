@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: xhengiz/tefeyyuz/Tefeyyuz.Web@master
+    - uses: xhengiz/GithubActionDockerTest@master
     - name: Setup .NET Core
-      uses: xhengiz/tefeyyuz/Tefeyyuz.Web@master
+      uses: xhengiz/GithubActionDockerTest@master
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
