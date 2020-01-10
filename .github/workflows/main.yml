@@ -1,0 +1,20 @@
+name: .NET Core
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: xhengiz/tefeyyuz/Tefeyyuz.Web@master
+    - name: Setup .NET Core
+      uses: xhengiz/tefeyyuz/Tefeyyuz.Web@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}      
+    - name: Build with dotnet
+      run: dotnet build --configuration Release
