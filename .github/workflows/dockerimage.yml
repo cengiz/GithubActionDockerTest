@@ -10,5 +10,10 @@ jobs:
 
     steps:
     - uses: xhengiz/GithubActionDockerTest@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}           
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag GithubActionDockerTest:$(date +%s)
