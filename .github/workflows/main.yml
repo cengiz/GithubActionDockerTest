@@ -16,4 +16,6 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}      
-
+    - name: Build with dotnet
+      run: docker build -t aspnetapp .
+           docker run -d -p 5000:5000 --name GithubActionDockerTest aspnetapp
