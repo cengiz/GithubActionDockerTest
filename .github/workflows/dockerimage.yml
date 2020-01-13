@@ -16,4 +16,4 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}           
     - name: Build the Docker image
-      run: docker build -t aspnetapp . 
+      run: docker build -t githubactiondockertest . 
