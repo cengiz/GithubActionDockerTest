@@ -24,3 +24,5 @@ jobs:
       run: docker build -t githubactiondockertest .
     - name: Run Solution
       run: docker run -d -p 8080:80 --name githubactiondockertest githubactiondockertest
+    - name: save docker to remote server
+      run: 		docker save githubactiondockertest | bzip2 | pv | ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'bunzip2 | docker load'
