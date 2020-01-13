@@ -22,3 +22,5 @@ jobs:
       run: dotnet build --configuration Release
     - name: Build the Docker image
       run: docker build -t githubactiondockertest .
+    - name: Run Solution
+      run: docker run -d -p 8080:80 --name githubactiondockertest githubactiondockertest
